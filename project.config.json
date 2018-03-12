@@ -3,11 +3,11 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
-		"postcss": true,
-		"minified": true,
+		"postcss": false,
+		"minified": false,
 		"newFeature": true
 	},
-	"miniprogramRoot": "./dist/",
+	"miniprogramRoot": "dist/",
 	"compileType": "miniprogram",
 	"appid": "wx0cf53e12e914bcca",
 	"projectname": "mpvue-wenepu",
