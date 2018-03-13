@@ -1,4 +1,5 @@
-import { getStorageSync } from '../../utils/storage'
+import { getStorageSync, setStorage } from '../../utils/storage'
+import { getAppToken } from '../../api/authentication'
 
 const state = {
   appToken: getStorageSync('appToken') || '',
@@ -6,7 +7,15 @@ const state = {
 }
 
 const actions = {
-
+  async getAppToken ({ commit }, authenticationForm) {
+    try {
+      const { data: appToken } = await getAppToken(authenticationForm)
+      await setStorage('appToken', appToken)
+      commit('SET_APP_TOKEN', appToken)
+    } catch (error) {
+      return Promise.reject(error)
+    }
+  }
 }
 
 const mutations = {
