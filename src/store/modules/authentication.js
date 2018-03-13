@@ -25,6 +25,18 @@ const actions = {
     } catch (error) {
       return Promise.reject(error)
     }
+  },
+  async bindStudent ({ commit }, authenticationForm) {
+    try {
+      await Promise.all([
+        this.dispatch('getAppToken', authenticationForm),
+        this.dispatch('getWebToken', authenticationForm)
+      ])
+      await setStorage('student', authenticationForm)
+      commit('SET_STUDENT', authenticationForm)
+    } catch (error) {
+      return Promise.reject(error)
+    }
   }
 }
 
