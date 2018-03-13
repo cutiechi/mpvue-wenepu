@@ -7,7 +7,7 @@ const getWebToken = authenticationForm => request({
 })
 
 const getAppToken = authenticationForm => request({
-  url: '/authentication/token/web',
+  url: '/authentication/token/app',
   method: 'POST',
   data: authenticationForm
 })
