@@ -3,7 +3,8 @@ import { getAppToken, getWebToken } from '../../api/authentication'
 
 const state = {
   appToken: getStorageSync('appToken') || '',
-  webToken: getStorageSync('webToken') || ''
+  webToken: getStorageSync('webToken') || '',
+  student: getStorageSync('student') || {}
 }
 
 const actions = {
