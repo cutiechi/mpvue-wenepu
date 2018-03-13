@@ -34,6 +34,9 @@ const mutations = {
   },
   'SET_WEB_TOKEN' (state, webToken) {
     state.webToken = webToken
+  },
+  'SET_STUDENT' (state, student) {
+    state.student = student
   }
 }
 
