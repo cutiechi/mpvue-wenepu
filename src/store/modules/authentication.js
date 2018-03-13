@@ -1,5 +1,5 @@
 import { getStorageSync, setStorage } from '../../utils/storage'
-import { getAppToken } from '../../api/authentication'
+import { getAppToken, getWebToken } from '../../api/authentication'
 
 const state = {
   appToken: getStorageSync('appToken') || '',
@@ -12,6 +12,15 @@ const actions = {
       const { data: appToken } = await getAppToken(authenticationForm)
       await setStorage('appToken', appToken)
       commit('SET_APP_TOKEN', appToken)
+    } catch (error) {
+      return Promise.reject(error)
+    }
+  },
+  async getWebToken ({ commit }, authenticationForm) {
+    try {
+      const { data: webToken } = await getWebToken(authenticationForm)
+      await setStorage('webToken', webToken)
+      commit('SET_WEB_TOKEN', webToken)
     } catch (error) {
       return Promise.reject(error)
     }
