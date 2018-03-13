@@ -1,5 +1,8 @@
 {
-  "pages": ["pages/home/main"],
+  "pages": [
+    "pages/home/main",
+    "pages/bind/main"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#0080ff",
